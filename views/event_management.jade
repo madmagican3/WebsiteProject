@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+    h1(id="title") Event
+    p #[a(href="../eventmanagement/search") Search]
+    p #[a(href="../eventmanagement/create") new]
+    -if(events)
+        ul(id="list")
+        for event2 in events
+            div(id="listItem")
+            p #{"Event name - "+event2.name }  #[a(href="../eventmanagement/update/#{event2.name}") Edit]
+            p #{"Deadline - " + event2.deadline}
+            p #{"Resources required - " + event2.resources}
+            p #{"Location - " + event2.location}
+            p #{"Description - " + event2.description}
+            div
+

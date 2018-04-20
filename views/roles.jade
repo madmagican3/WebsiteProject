@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 Manage roles
+    if(emptyRole)
+        p The role field is empty or includes a space
+    if (invalidRole)
+        p This role name is already in use
+    if (deleteFailed)
+        p This is in use and therefore cannot be deleted
+    //This form will submit the new role
+    form(name="NewRole", method="post")
+        div.input
+            span.label Role Name
+                input(type="text", name="RoleName")
+                div
+            div.actions
+                input(type="submit", value="Create new role")
+    ul(id="roleList")
+        //For each role in the list display the name and edit and delete
+        for role in roles
+            li #{role.Role + ""}  #[a(href="../roles/update/#{role.Role}") Edit] #[a(href="../roles/delete/#{role.Role}") Delete]

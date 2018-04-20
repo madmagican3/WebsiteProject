@@ -1,0 +1,111 @@
+body {
+  width:100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display:inline;
+  position:absolute;
+  top:-8px;
+  left:-8px;
+}
+#deleteform{
+  margin:20px;
+
+}
+
+a {
+  color: #00B7FF;
+}
+#image{
+  width:64px;
+  height:64px;
+}
+#banner{
+  padding:0;
+  vertical-align:baseline;
+  text-align: center;
+  color:black;
+  background-color: black;
+  width:100%;
+}
+#content{
+  width:100%;
+  overflow:hidden;
+}
+#logo{
+  text-align:left;
+}
+#logout{
+  position:absolute;
+  right:1%;
+  top:10px;
+}
+#title{
+  font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align:center;
+  font-weight:bold;
+}
+#form{
+  text-align:center;
+}
+#warning{
+  text-align:center;
+  color:red;
+  font-weight:bold;
+}
+#register{
+  text-align:center;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#linklist{
+  text-align:center;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#list{
+  text-align:center;
+}
+
+.EventTable.th{
+
+}
+#Deadline{
+
+}
+input,label,p,ul,ol,li,form, h1, h2, h3, h4, h5, h6,p,a{
+  margin:10px;
+  line-height: 12px;
+}
+.chosen-container-multi .chosen-choices{
+  margin:2px !important;
+}
+.fzk-dp{
+  margin-left:auto;
+  margin-right:auto;
+}
+.event-table{
+  margin: 0 auto;
+}
+.container form, h1, h2, h3, h4, h5, h6,p{
+  text-align: center;
+}
+#content{
+  max-width:80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+ul,ol{
+  list-style: none;
+}
+.fzk-dp-cell{
+  margin:0; /*Important to make sure text stays in line*/
+}
+#roleList{
+  display: inline;
+  text-align:center;
+  padding-right: 20px;
+}
+#listItem{
+  list-style-position:inside;
+  border: 1px solid black;
+}
+#deleteNotification{
+  text-align:center;
+}

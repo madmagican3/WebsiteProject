@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= 'Project Management'
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    div.container(id="banner")
+      div(id="logo")
+        a(href="/")
+          img(src="/images/logo-only.png",id="image" )
+      div(id="logout")
+        a(href="/logout") Logout
+    div.container(id="content")
+      block content

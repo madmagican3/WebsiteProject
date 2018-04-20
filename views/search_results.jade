@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1(id="title") Search results
+
+    for result in results
+        p(id="linklist") #{result.name}  #[a(href="update/#{result.name}") Edit]

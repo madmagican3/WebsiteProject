@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    h1(id="title") Manage users
+    div(id="linklist")
+        a(href="../delete/#{user.name}", id="deleteNotification") Delete user
+    if (invalidUser)
+        p(id="warning") This is not a valid username
+    form(name="EditUser", method="post")
+        div.input
+            span.label User - Change a users username
+                input(type="text", name="Username", value = '#{user.name}')
+                div
+            span.label Password - Change a users password
+                input(type="password", name="Password")
+                div
+                    //https://stackoverflow.com/questions/30777487/parsing-jade-forms-with-node-js
+                        //https://www.w3schools.com/tags/tag_select.asp
+            span.select Role - change a users role
+                select(type="roles", name="roles")
+                    each role in roles
+                        if role.Role == user.role
+                            option(value=role.Role, selected = true) #{role.Role}
+                        else
+                            option(value=role.Role) #{role.Role}
+                div
+            div.actions
+                input(type="submit", value="Save edited User")

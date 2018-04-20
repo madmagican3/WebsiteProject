@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1(id="title") Login
+    //https://stackoverflow.com/questions/6989653/jade-links-inside-a-paragraph
+    p(id="register") #[a(href="../register") If you dont have an account, please register here]
+    if (empty)
+        p(id="warning") The fields are not filled in
+    if(failed)
+        p(id="warning") Invalid username or password
+    form(name="login", method="post" ,id="form")
+        div.input
+            span.label User
+                input(type="text", name="Username")
+                div
+            span.label Password
+                input(type="password", name="Password")
+            div.actions
+                input(type="submit", value="Login")

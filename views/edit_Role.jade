@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1(id="title") Edit Role
+    if (invalid)
+        p(id="warning") The edited username is invalid
+    if (inUse)
+        p(id="warning") The name you're attempting to edit too is already in use
+    form(name="roleedit", method="post")
+        div.input
+            span.label Role
+                input(type="text", name="Role", value = '#{Role}')
+                div
+            div.actions
+                input(type="submit", value="Edit Role")

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1(id="title") Manage users
+    ul(id="linklist")
+        //https://stackoverflow.com/questions/36884426/write-inline-tags-jade/36893925
+        //https://stackoverflow.com/questions/5081534/put-jade-local-variable-in-tag-attribute
+        //https://naltatis.github.io/jade-syntax-docs/
+        for user in users
+            li #{user.name + ""}  #[a(href="../usermanagement/update/#{user.name}") Edit]

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1(id="title") Register
+    p(id="register") #[a(href="../login") If you have an account already click here]
+    if(alreadyExists)
+        p(id="warning") That username already exists
+    if (nonMatchingPass)
+        p(id="warning") The passwords do not match
+    if (invalidFields)
+        p(id="warning") Please fill in all the fields and do not use space in your username
+    form(name="Register", method="post", id="form")
+        div.input
+            span.label User
+                input(type="text", name="Username")
+                div
+            span.label Password
+                input(type="password", name="Password")
+                div
+            span.label Re-enter password
+                input(type="password", name="VerificationPass")
+                div
+            div.actions
+                input(type="submit", value="Register")

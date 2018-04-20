@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1(id="title") Search Event
+    form(name="search", method="post")
+        div.input
+            span
+                input(type="text", name="searchVal")
+            actions
+                input(type="submit", value="search")

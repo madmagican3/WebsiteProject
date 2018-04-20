@@ -1,0 +1,75 @@
+extends layout
+
+block content
+
+    h1(id="title") Event
+    p #[a(href="../eventmanagement/search") Search]
+    if (invalid)
+        p(id="warning") The fields are not filled in correctly, please populate required fields and dont use a space in the name
+    if (used)
+        p(id="warning") The name for your event is in use already
+    form(name="createEvent", method="post")
+        div.input
+            span.label Name
+                input(type="text", name="Name")
+                div
+            span.label Deadline
+                input(type="text", name="Deadline", id ='deadline' readonly)
+                div(id="container")
+                div
+            span.label Resources
+                input(type="text", name="Resources")
+                div
+            span.label View Users
+                select(class="chosen-select", multiple=true,type="users", name="ViewUsers")
+                    each user in Users
+                        option(value=user.name) #{user.name}
+                div
+            span.label Update Users
+                select(class="chosen-select", multiple=true,type="users", name="UpdateUsers")
+                    each user in Users
+                        option(value=user.name) #{user.name}
+                div
+            span.label Delete Users
+                select(class="chosen-select", multiple=true,type="users", name="DeleteUsers")
+                    each user in Users
+                        option(value=user.name) #{user.name}
+                div
+            span.label location
+                input(type="text", name="location")
+                div
+            span.label description
+                textarea( name = "description")
+                div
+            span.label View Role
+                select(class="chosen-select", multiple=true,type="roles", name="ViewRoles")
+                    each role in Roles
+                        option(value=role.Role) #{role.Role}
+                div
+            span.label Edit Role
+                select(class="chosen-select", multiple=true,type="roles", name="EditRoles")
+                    each role in Roles
+                        option(value=role.Role) #{role.Role}
+                div
+            span.label Delete Role
+                select(class="chosen-select", multiple=true,type="roles", name="DeleteRoles")
+                    each role in Roles
+                        option(value=role.Role) #{role.Role}
+                div
+            div.actions
+                input(type="submit", value="Create")
+
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src='/javascripts/chosen.jquery.js')
+    script(src='/javascripts/date-picker.js')
+    //http://fizker.github.io/date-picker/examples.html
+    //https://harvesthq.github.io/chosen/
+    script.
+        $('.chosen-select').chosen();
+        new DatePicker(null).show('#container').on('change', function (date) {
+            document.getElementById('deadline').value = DatePicker.formatDate(date,'y-m-d')
+        });
+    link(rel='stylesheet', href='/stylesheets/chosen.css')
+    link(rel='stylesheet', href='/stylesheets/date-picker.css')
+
